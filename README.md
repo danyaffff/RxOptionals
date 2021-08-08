@@ -11,7 +11,7 @@ func bind() {
 }
 ```
 
-The `guard` construction looks a bit messy and it would be great to remove it.
+The `guard` construction looks a bit messy and it would be great to remove it (and put inside called function).
 
 ```swift
 weak var someController: SomeController?
