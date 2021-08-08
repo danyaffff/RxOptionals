@@ -21,7 +21,7 @@ public extension ObservableType {
     /// - Parameter observers: Optional observers to receives events.
     /// - Warning: Uses `unsafeBitCast(_:to:)`.
     /// - Returns: Disposable object that can be used to unsubscribe the observers.
-    func bind<Observer: ObserverType>(to observers: Observer?...) -> Disposable where Element == Observer.Element {
+    func bind<Observer: ObserverType>(to observers: Observer?...) -> Disposable? where Element == Observer.Element {
         bind(to: observers)
     }
     
@@ -29,8 +29,9 @@ public extension ObservableType {
     /// - Parameter observers: Optional observers to receives events.
     /// - Warning: Uses `unsafeBitCast(_:to:)`.
     /// - Returns: Disposable object that can be used to unsubscribe the observers.
-    func bind<Observer: ObserverType>(to observers: [Observer?]) -> Disposable where Element == Observer.Element {
+    func bind<Observer: ObserverType>(to observers: [Observer?]) -> Disposable? where Element == Observer.Element {
         let unwrappedObservers = observers.compactMap { $0 }
+        guard unwrappedObservers.count > 0 else { return nil }
         let bind: (Observer...) -> Disposable = bind(to:)
         return unsafeBitCast(bind, to: (([Observer]) -> Disposable).self)(unwrappedObservers)
     }
