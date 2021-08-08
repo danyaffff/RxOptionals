@@ -61,14 +61,14 @@ public extension ObservableType where Element == Any {
     
     /// Merges the specified optinal observable sequences into one observable sequence of tuples whenever any of the observable sequences produces an element.
     /// - Returns: An optional observable sequence containing the result of combining elements of the sources.
-    static func combineLatest<O1: ObservableConvertibleType, O2: ObservableConvertibleType>(_ source1: O1?, _ source2: O2?) -> Observable<(O1.Element, O2.Element)>? {
+    static func combineLatest<O1: ObservableType, O2: ObservableType>(_ source1: O1?, _ source2: O2?) -> Observable<(O1.Element, O2.Element)>? {
         guard let unwrappedSource1 = source1?.asObservable(), let unwrappedSource2 = source2?.asObservable() else { return nil }
         return Observable.combineLatest(unwrappedSource1, unwrappedSource2)
     }
     
     /// Merges the specified optinal observable sequences into one observable sequence of tuples whenever any of the observable sequences produces an element.
     /// - Returns: An optional observable sequence containing the result of combining elements of the sources.
-    static func combineLatest<O1: ObservableConvertibleType, O2: ObservableConvertibleType, O3: ObservableConvertibleType>(_ source1: O1?, _ source2: O2?, _ source3: O3?) -> Observable<(O1.Element, O2.Element, O3.Element)>? {
+    static func combineLatest<O1: ObservableType, O2: ObservableType, O3: ObservableType>(_ source1: O1?, _ source2: O2?, _ source3: O3?) -> Observable<(O1.Element, O2.Element, O3.Element)>? {
         guard let unwrappedSource1 = source1, let unwrappedSource2 = source2, let unwrappedSource3 = source3 else { return nil }
         return Observable.combineLatest(unwrappedSource1, unwrappedSource2, unwrappedSource3)
     }
