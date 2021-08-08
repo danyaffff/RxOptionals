@@ -15,28 +15,28 @@ import RxCocoa
 public extension ObservableType {
     
     /**
-    Subscribes optional `observer` to receive events for this sequence.
-    
-    ### Grammar
-    
-    **Next\* (Error | Completed)?**
-    
-    * sequences can produce zero or more elements so zero or more `Next` events can be sent to `observer`
-    * once an `Error` or `Completed` event is sent, the sequence terminates and can't produce any other elements
-    
-    It is possible that events are sent from different threads, but no two events can be sent concurrently to
-    `observer`.
-    
-    ### Resource Management
-    
-    When sequence sends `Complete` or `Error` event all internal resources that compute sequence elements
-    will be freed.
-    
-    To cancel production of sequence elements and free resources immediately, call `dispose` on returned
-    subscription.
-    
-    - returns: Subscription for `observer` that can be used to cancel production of sequence elements and free resources.
-    */
+     Subscribes optional `observer` to receive events for this sequence.
+     
+     ### Grammar
+     
+     **Next\* (Error | Completed)?**
+     
+     * sequences can produce zero or more elements so zero or more `Next` events can be sent to `observer`
+     * once an `Error` or `Completed` event is sent, the sequence terminates and can't produce any other elements
+     
+     It is possible that events are sent from different threads, but no two events can be sent concurrently to
+     `observer`.
+     
+     ### Resource Management
+     
+     When sequence sends `Complete` or `Error` event all internal resources that compute sequence elements
+     will be freed.
+     
+     To cancel production of sequence elements and free resources immediately, call `dispose` on returned
+     subscription.
+     
+     - returns: Subscription for `observer` that can be used to cancel production of sequence elements and free resources.
+     */
     func subscribe<Observer: ObserverType>(_ observer: Observer?) -> Disposable? where Element == Observer.Element {
         guard let observer = observer else { return nil }
         return subscribe(observer)
@@ -57,7 +57,7 @@ public extension ObservableType {
     }
     
     /// Creates new subscription to `Observable` and sends elements to existed observer(s).
-    /// - Parameter observers: Optional observers to receives events.
+    /// - Parameter observers: Array of optional observers to receives events.
     /// - Warning: Uses `unsafeBitCast(_:to:)`.
     /// - Returns: Disposable object that can be used to unsubscribe the observers.
     func bind<Observer: ObserverType>(to observers: [Observer?]) -> Disposable? where Element == Observer.Element {
@@ -70,7 +70,7 @@ public extension ObservableType {
     /// Subscribes an optional element handler to an observable sequence.
     /// In case error occurs in debug mode, `fatalError` will be raised.
     /// In case error occurs in release mode, `error` will be logged.
-    /// - Parameter onNext: Action to invoke for each element in the observable sequence.
+    /// - Parameter onNext: Optional action to invoke for each element in the observable sequence.
     /// - Returns: Disposable object that can be used to unsubscribe the observers.
     func bind(onNext: ((Element) -> Void)?) -> Disposable {
         let unwrappedClosure: (Element) -> Void = { element in onNext?(element) }
@@ -80,7 +80,7 @@ public extension ObservableType {
     /// Subscribes an optional empty handler to an observable sequence.
     /// In case error occurs in debug mode, `fatalError` will be raised.
     /// In case error occurs in release mode, `error` will be logged.
-    /// - Parameter onNext: Action to invoke for each element in the observable sequence.
+    /// - Parameter onNext: Optional action to invoke for each element in the observable sequence (without using the element).
     /// - Returns: Disposable object that can be used to unsubscribe the observers.
     func bind(onNext: (() -> Void)?) -> Disposable {
         let unwrappedClosure: (Element) -> Void = { _ in onNext?() }

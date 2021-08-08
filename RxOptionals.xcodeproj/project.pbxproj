@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51177E926C07F8000864651 /* SharedSequenceConvertibleType+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51177E826C07F8000864651 /* SharedSequenceConvertibleType+Optionals.swift */; };
 		A535C52626BECE3800E06B63 /* RxOptionals.h in Headers */ = {isa = PBXBuildFile; fileRef = A535C52326BECE3800E06B63 /* RxOptionals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A535C52F26C019F100E06B63 /* ObservableType+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C52C26C019F100E06B63 /* ObservableType+Optionals.swift */; };
 		A535C53026C019F100E06B63 /* Disposable+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C52D26C019F100E06B63 /* Disposable+Optionals.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A51177E826C07F8000864651 /* SharedSequenceConvertibleType+Optionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharedSequenceConvertibleType+Optionals.swift"; sourceTree = "<group>"; };
 		A535C51526BECCAB00E06B63 /* RxOptionals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxOptionals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A535C52326BECE3800E06B63 /* RxOptionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxOptionals.h; sourceTree = "<group>"; };
 		A535C52C26C019F100E06B63 /* ObservableType+Optionals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+Optionals.swift"; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				A535C52D26C019F100E06B63 /* Disposable+Optionals.swift */,
 				A535C52C26C019F100E06B63 /* ObservableType+Optionals.swift */,
+				A51177E826C07F8000864651 /* SharedSequenceConvertibleType+Optionals.swift */,
 				A535C52226BECE3800E06B63 /* Supporting Files */,
 			);
 			name = RxOptionals;
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A535C52F26C019F100E06B63 /* ObservableType+Optionals.swift in Sources */,
+				A51177E926C07F8000864651 /* SharedSequenceConvertibleType+Optionals.swift in Sources */,
 				A535C53026C019F100E06B63 /* Disposable+Optionals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
