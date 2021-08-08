@@ -8,9 +8,55 @@
 #if !RX_NO_MODULE
 
 import RxSwift
+import RxCocoa
 
 #endif
 
+// MARK: - bind
+public extension ObservableType {
+    
+    /// Creates new subscription to `Observable` and sends elements to existed observer(s).
+    /// In case error occurs in debug mode, `fatalError` will be raised.
+    /// In case error occurs in release mode, `error` will be logged.
+    /// - Parameter observers: Optional observers to receives events.
+    /// - Warning: Uses `unsafeBitCast(_:to:)`.
+    /// - Returns: Disposable object that can be used to unsubscribe the observers.
+    func bind<Observer: ObserverType>(to observers: Observer?...) -> Disposable where Element == Observer.Element {
+        bind(to: observers)
+    }
+    
+    /// Creates new subscription to `Observable` and sends elements to existed observer(s).
+    /// - Parameter observers: Optional observers to receives events.
+    /// - Warning: Uses `unsafeBitCast(_:to:)`.
+    /// - Returns: Disposable object that can be used to unsubscribe the observers.
+    func bind<Observer: ObserverType>(to observers: [Observer?]) -> Disposable where Element == Observer.Element {
+        let unwrappedObservers = observers.compactMap { $0 }
+        let bind: (Observer...) -> Disposable = bind(to:)
+        return unsafeBitCast(bind, to: (([Observer]) -> Disposable).self)(unwrappedObservers)
+    }
+    
+    /// Subscribes an optional element handler to an observable sequence.
+    /// In case error occurs in debug mode, `fatalError` will be raised.
+    /// In case error occurs in release mode, `error` will be logged.
+    /// - Parameter onNext: Action to invoke for each element in the observable sequence.
+    /// - Returns: Disposable object that can be used to unsubscribe the observers.
+    func bind(onNext: ((Element) -> Void)?) -> Disposable {
+        let unwrappedClosure: (Element) -> Void = { element in onNext?(element) }
+        return bind(onNext: unwrappedClosure)
+    }
+    
+    /// Subscribes an optional empty handler to an observable sequence.
+    /// In case error occurs in debug mode, `fatalError` will be raised.
+    /// In case error occurs in release mode, `error` will be logged.
+    /// - Parameter onNext: Action to invoke for each element in the observable sequence.
+    /// - Returns: Disposable object that can be used to unsubscribe the observers.
+    func bind(onNext: (() -> Void)?) -> Disposable {
+        let unwrappedClosure: (Element) -> Void = { _ in onNext?() }
+        return bind(onNext: unwrappedClosure)
+    }
+}
+
+// MARK: - combineLatest
 public extension ObservableType where Element == Any {
     
     /// Merges the specified optinal observable sequences into one observable sequence of tuples whenever any of the observable sequences produces an element.
