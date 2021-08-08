@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A535C52626BECE3800E06B63 /* RxOptionals.h in Headers */ = {isa = PBXBuildFile; fileRef = A535C52326BECE3800E06B63 /* RxOptionals.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A535C52F26C019F100E06B63 /* ObservableType+OptionalCombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C52C26C019F100E06B63 /* ObservableType+OptionalCombineLatest.swift */; };
+		A535C52F26C019F100E06B63 /* ObservableType+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C52C26C019F100E06B63 /* ObservableType+Optionals.swift */; };
 		A535C53026C019F100E06B63 /* Disposable+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C52D26C019F100E06B63 /* Disposable+Optionals.swift */; };
-		A535C53126C019F100E06B63 /* ObservableConvertibleType+OptionalBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C52E26C019F100E06B63 /* ObservableConvertibleType+OptionalBind.swift */; };
 		A535C53526C01C5F00E06B63 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A535C53426C01C5F00E06B63 /* RxSwift */; };
 		A535C53726C01C5F00E06B63 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A535C53626C01C5F00E06B63 /* RxCocoa */; };
 /* End PBXBuildFile section */
@@ -18,9 +17,8 @@
 /* Begin PBXFileReference section */
 		A535C51526BECCAB00E06B63 /* RxOptionals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxOptionals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A535C52326BECE3800E06B63 /* RxOptionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxOptionals.h; sourceTree = "<group>"; };
-		A535C52C26C019F100E06B63 /* ObservableType+OptionalCombineLatest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+OptionalCombineLatest.swift"; sourceTree = "<group>"; };
+		A535C52C26C019F100E06B63 /* ObservableType+Optionals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+Optionals.swift"; sourceTree = "<group>"; };
 		A535C52D26C019F100E06B63 /* Disposable+Optionals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Disposable+Optionals.swift"; sourceTree = "<group>"; };
-		A535C52E26C019F100E06B63 /* ObservableConvertibleType+OptionalBind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableConvertibleType+OptionalBind.swift"; sourceTree = "<group>"; };
 		A535C53826C01C8900E06B63 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,8 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				A535C52D26C019F100E06B63 /* Disposable+Optionals.swift */,
-				A535C52E26C019F100E06B63 /* ObservableConvertibleType+OptionalBind.swift */,
-				A535C52C26C019F100E06B63 /* ObservableType+OptionalCombineLatest.swift */,
+				A535C52C26C019F100E06B63 /* ObservableType+Optionals.swift */,
 				A535C52226BECE3800E06B63 /* Supporting Files */,
 			);
 			name = RxOptionals;
@@ -160,8 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A535C52F26C019F100E06B63 /* ObservableType+OptionalCombineLatest.swift in Sources */,
-				A535C53126C019F100E06B63 /* ObservableConvertibleType+OptionalBind.swift in Sources */,
+				A535C52F26C019F100E06B63 /* ObservableType+Optionals.swift in Sources */,
 				A535C53026C019F100E06B63 /* Disposable+Optionals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
