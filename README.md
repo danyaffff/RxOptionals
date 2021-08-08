@@ -24,6 +24,14 @@ func bind() {
 It may seem that not so much changes and that the code is getting longer, but after a while you will realize that you saved a lot of time and space, and were able to write cleaner and more functional code (because optionals were created for this) ;)
 
 ## Installation
+### CocoaPods
+You could install package via [CocoaPods](https://cocoapods.org):\
+Add this line to your Podfile:
+```python
+pod 'RxOptionals', :git => 'https://github.com/danyaffff/RxOptionals'
+```
+
+### Swift Package manager
 You could install package via [Swift Package manager](https://swift.org/package-manager/):
 1. In Xcode, open your project and navigate to File → Swift Packages → Add Package Dependency...
 2. Paste the repository URL (https://github.com/danyaffff/RxOptionals) and click Next.
