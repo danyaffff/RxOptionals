@@ -12,6 +12,7 @@ import RxCocoa
 
 #endif
 
+// MARK: - subscribe
 public extension ObservableType {
     
     /**
