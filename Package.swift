@@ -16,6 +16,8 @@ let package = Package(
         .target(name: "RxOptionals", dependencies: [
             .product(name: "RxSwift", package: "RxSwift"),
             .product(name: "RxCocoa", package: "RxSwift")
+        ], exclude: [
+            "Supporting Files/Info.plist"
         ]),
         .testTarget(name: "RxOptionalsTests", dependencies: ["RxOptionals"]),
     ],
