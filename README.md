@@ -7,7 +7,7 @@ weak var someController: SomeController?
 
 func bind() {
     guard let binder = someController?.someView.rx.someBinder else { /*...*/ }
-    someRelay.bind(to: binder).disposed(by: bag)
+    someObservable.bind(to: binder).disposed(by: bag)
 }
 ```
 
@@ -17,7 +17,7 @@ The `guard` construction looks a bit messy and it would be great to remove it (a
 weak var someController: SomeController?
 
 func bind() {
-    someRelay.bind(to: someController?.someView.rx.someBinder).disposed(by: bag)
+    someObservable.bind(to: someController?.someView.rx.someBinder).disposed(by: bag)
 }
 ```
 
