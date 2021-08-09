@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "RxOptionals"
-  spec.version      = "0.5"
+  spec.version      = "0.6"
   spec.summary      = "Extensions that allow you to work with optionals."
 
   # This description is used to generate tags and improve search results.
